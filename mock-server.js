@@ -2,7 +2,8 @@ const http = require('http');
 
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Welcome');
-}).listen(3001, "127.0.0.1");
+  res.end('Welcome\n');
+}).listen(8080);
 
-console.log('Server running at http://127.0.0.1:3001/');
+console.log('Server running at http://127.0.0.1:8080/');
+

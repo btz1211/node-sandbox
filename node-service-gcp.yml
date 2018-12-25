@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"kind":"Service","apiVersion":"v1","metadata":{"name":"node-server","creationTimestamp":null,"labels":{"app":"node-server"}},"spec":{"ports":[{"protocol":"TCP","port":8080,"targetPort":8080}],"selector":{"app":"node-server"},"type":"LoadBalancer"},"status":{"loadBalancer":{}}}
+  creationTimestamp: 2018-12-25T20:18:26Z
+  labels:
+    app: node-server
+  name: node-server
+  namespace: default
+  resourceVersion: "3946148"
+  selfLink: /api/v1/namespaces/default/services/node-server
+  uid: 3c3cf8d6-0882-11e9-9efa-42010a8e00a5
+spec:
+  clusterIP: 10.39.248.103
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32626
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: node-server
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}

@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"kind":"Deployment","apiVersion":"apps/v1","metadata":{"name":"node-server","creationTimestamp":null,"labels":{"app":"node-server"}},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"node-server"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"node-server"}},"spec":{"containers":[{"name":"docker","image":"245891646863.dkr.ecr.us-east-1.amazonaws.com/docker","resources":{}}]}},"strategy":{}},"status":{}}
+      {"kind":"Deployment","apiVersion":"apps/v1","metadata":{"name":"apprentice-api","creationTimestamp":null,"labels":{"app":"apprentice-api"}},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"apprentice-api"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"apprentice-api"}},"spec":{"containers":[{"name":"apprentice-api","image":"957687255356.dkr.ecr.us-west-2.amazonaws.com/apprentice-api:latest","resources":{}}]}},"strategy":{}},"status":{}}
   creationTimestamp: 2018-12-15T04:34:24Z
   generation: 1
   labels:
-    app: node-server
-  name: node-server
+    app: apprentice-api
+  name: apprentice-api
   namespace: default
   resourceVersion: "2263"
-  selfLink: /apis/apps/v1/namespaces/default/deployments/node-server
+  selfLink: /apis/apps/v1/namespaces/default/deployments/apprentice-api
   uid: b32d0c6c-0022-11e9-a3b5-0eaff92ad114
 spec:
   progressDeadlineSeconds: 600
@@ -19,7 +19,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: node-server
+      app: apprentice-api
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -29,12 +29,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: node-server
+        app: apprentice-api
     spec:
       containers:
-      - image: 245891646863.dkr.ecr.us-east-1.amazonaws.com/docker
+      - image: 957687255356.dkr.ecr.us-west-2.amazonaws.com/apprentice-api:latest
         imagePullPolicy: Always
-        name: docker
+        name: apprentice-api
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
